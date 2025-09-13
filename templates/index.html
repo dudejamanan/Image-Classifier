@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>CIFAR-10 Image Classifier</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="upload-box">
+            <input type="file" name="file" required>
+            <br><br>
+            <button type="submit">Predict</button>
+        </div>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <img src="{{ filename }}">
+    {% endif %}
+    <!-- Add this section to your index.html -->
+<div class="classes-info">
+    <h3>📋 Supported Classifications</h3>
+    <p>This AI model can identify and classify the following 10 categories from the CIFAR-10 dataset:</p>
+    <div class="classes-grid">
+        <div class="class-item">
+            <span class="emoji">✈️</span> Airplane
+        </div>
+        <div class="class-item">
+            <span class="emoji">🚗</span> Automobile
+        </div>
+        <div class="class-item">
+            <span class="emoji">🐦</span> Bird
+        </div>
+        <div class="class-item">
+            <span class="emoji">🐱</span> Cat
+        </div>
+        <div class="class-item">
+            <span class="emoji">🦌</span> Deer
+        </div>
+        <div class="class-item">
+            <span class="emoji">🐕</span> Dog
+        </div>
+        <div class="class-item">
+            <span class="emoji">🐸</span> Frog
+        </div>
+        <div class="class-item">
+            <span class="emoji">🐎</span> Horse
+        </div>
+        <div class="class-item">
+            <span class="emoji">🚢</span> Ship
+        </div>
+        <div class="class-item">
+            <span class="emoji">🚚</span> Truck
+        </div>
+    </div>
+</div>
+</body>
+</html>
